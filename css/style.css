@@ -1,0 +1,35 @@
+/*body {background: #fff url("images/bg2.jpg"); font-family: "Trebuchet MS";}*/
+* {outline: none;}
+body {background: #777 url() repeat-x; font-family: "Trebuchet MS";}
+h2 {font-size: 16px;}
+ul#genpw {list-style-type: none; margin: -20px auto 0px;}
+#genpw li {background: #333; color: #fff; margin: 5px 0 0 -40px; margin-top: 20px;}
+.options, .version {background: #333; margin: 0;}
+#genpw li a, .options {color: #fff; font-size: 18px; text-decoration: none;display:block;padding:10px;outline: none;}
+a strong {color: #E72573; float: right; background-color: #222; margin: -10px; padding: 10px; border-left: 3px solid #000; width: 300px; text-align: center;}
+#wrapper {width: 620px; margin: 200px auto; background: #eee; border: 1px solid #ccc; border-radius: 5px;}
+#innerwrapper {border: 1px solid #fff; border-radius: 5px; background: #fbfcfb url('../images/background.png') repeat-x bottom left;}
+.floatright {float: right;}
+input[type=text] {width: 350px; padding: 3px; font-size: 12px; color: #E72573; border-radius: 5px; border: 1px solid #333;}
+input.submit {font-family: Georgia; font-weight: bold; font-size: 20px; cursor: pointer; float: right; background: transparent; border: none; color: #E72573; margin-top: 5px;}
+input.submit:hover {text-decoration: underline; color: #E72573;}
+h1 {font-family: Georgia;/*  text-shadow: #111 1px 1px 3px; */ padding: 5px; margin: 0px 0px 10px 0px;}
+h1 a {text-decoration: none; color: #333;}
+h1 a:hover {text-decoration: underline;}
+h1.changelog {display: inline;}
+/* a:hover, li.titles {text-decoration: none; background-color: #49b8a8; color: #fff;} */
+/* a:active {color: #fff;background-color: #259780;} */
+.small {font-size: 11px; font-family: Helvetica, sans-serif; background: #333; margin-top: -10px; padding: 5px; color: #fff;}
+#footer a {color: #333; text-decoration: none;}
+#footer {font-size: 11px; margin-top: 42px; border-top: 1px solid #777; padding: 5px;}
+#footer p {margin: 5px 0;}
+#footer #changelog, a#back {cursor: pointer;}
+
+#changelogcontent {padding: 5px;}
+#changelogcontent .version {color: #fff; margin-bottom: 10px; border-radius: 5px;}
+#changelogcontent .version h2 {margin: 0px; padding: 5px;}
+#changelogcontent .version ul {padding-bottom: 10px; list-style: square; margin: 0px;}
+#changelogcontent .version ul li {font-size: 12px;}
+#changelogging {display: none;}
+#changelogging a {color: #E72573 !important; text-decoration: none;}
+#changelogging a:hover {text-decoration: underline;}

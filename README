@@ -1,0 +1,1 @@
+This app simply generates passwords.  It will do more things, and do the things it currently does better, but right now all it does is spit out a relatively secure password onto a relatively nice UI.  There is also some user tracking so you can see how many people visited.
