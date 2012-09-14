@@ -55,19 +55,20 @@
 				<?php /*?><input type="hidden" name="pass" value="<?= $password; ?>" /><?php */?>
 			</form>
 			<div id="footer">
-				<p><a id="info">info</a> | &copy; <?= date("Y"); ?> <a href="http://www.ryanpriebe.com" target="_blank">ryanpriebe.com</a></p>
+				<p><a id="info">info</a> | &copy; <?php echo date("Y"); ?> <a href="http://www.ryanpriebe.com" target="_blank">ryanpriebe.com</a></p>
 			</div>
 			<div id="changelogging" title="Info">
 				<div id="changelogcontent">
 					<div class="version">
 						<h2>Known Issues</h2>
 						<ul>
-							<li>Sometimes the password won't generate properly.  If this occurs (where the password is shorter than the length that you chose) clicking "generate again" will fix it.</li>
+							<li><a href="https://github.com/aapis/passwordr/issues" target="_blank">https://github.com/aapis/passwordr/issues</a></li>
 						</ul>
 					</div>
 					<div class="version">
-						<h2>2.1 Planned Features</h2>
+						<h2>3.0 Planned Features</h2>
 						<ul>
+							<li>API</li>
 							<li>Copy to clipboard.</li>
 						</ul>
 					</div>

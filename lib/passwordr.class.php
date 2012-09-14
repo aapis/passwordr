@@ -18,7 +18,7 @@
 		public function __construct(){
 		
 			$this->level = 2;
-			$this->length = $this->cleanup($_POST['len']);
+			//$this->length = $this->cleanup($_POST['len']);
 	
 			if($this->cleanup($_POST['base'])){
 			
@@ -39,7 +39,7 @@
 		private function randomizer(){
 		
 			$this->items = str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_?+-.<?;:&#@");
-			$password = substr(sha1($this->password.$this->items), $this->startmajigger(), $this->length - 1);
+			$password = substr(sha1($this->password.$this->items), $this->startmajigger(), $this->cleanup($_POST['len']) - 1);
 
 			$this->length = strlen($password);
 			
