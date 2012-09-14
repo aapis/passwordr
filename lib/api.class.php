@@ -22,9 +22,9 @@
 		}
 
 		private function _generate(){
-			if($this->_auth()){
-				$obj = new stdClass();
+			$obj = new stdClass();
 
+			if($this->_auth()){
 				$obj->StringResult = substr($this->confusitizer(), 0, $this->_length);
 				$obj->Length = $this->_length;
 
@@ -43,12 +43,10 @@
 					break;
 				}
 			}else {
-				$error = new stdClass();
+				$obj->StringResult = 'Invalid authentication key.';
+				$obj->Length = strlen($obj->StringResult);
 
-				$error->StringResult = 'Invalid authentication key.';
-				$error->Length = strlen($error->StringResult);
-
-				$this->_result = json_encode($error);
+				$this->_result = json_encode($obj);
 			}
 		}
 
