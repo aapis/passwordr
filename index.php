@@ -25,7 +25,6 @@
 <title>Passwordr | Random Password Generator</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" href="css/jui.css" type="text/css" />
-<script type="text/javascript" src="lib/js/scripts.js"></script>
 </head>
 	<body>
 	<div id="wrapper">
@@ -52,20 +51,27 @@
 			<?php }else {?>
 				<input type="submit" value="Generate Password" class="submit"/>
 			<?php }?>
-				<input type="hidden" name="generatepw" />
+				<input type="hidden" name="generatepw" class="generated" />
 				<?php /*?><input type="hidden" name="pass" value="<?= $password; ?>" /><?php */?>
 			</form>
 			<div id="footer">
-				<p><a id="changelog">changelog</a> | &copy; <?= date("Y"); ?> <a href="http://www.ryanpriebe.com" target="_blank">ryanpriebe.com</a></p>
+				<p><a id="info">info</a> | &copy; <?= date("Y"); ?> <a href="http://www.ryanpriebe.com" target="_blank">ryanpriebe.com</a></p>
 			</div>
-			<div id="changelogging" title="Changelog">
+			<div id="changelogging" title="Info">
 				<div id="changelogcontent">
+					<div class="version">
+						<h2>Known Issues</h2>
+						<ul>
+							<li>Sometimes the password won't generate properly.  If this occurs (where the password is shorter than the length that you chose) clicking "generate again" will fix it.</li>
+						</ul>
+					</div>
 					<div class="version">
 						<h2>2.1 Planned Features</h2>
 						<ul>
 							<li>Copy to clipboard.</li>
 						</ul>
 					</div>
+					<h2>Changelog</h2>
 					<div class="version">
 						<h2>2.0</h2>
 						<ul>
@@ -90,25 +96,6 @@
 	<script type="text/javascript" src="lib/js/jquery.js"></script>
 	<script type="text/javascript" src="lib/js/jui.js"></script>
 	<?php /*?><script type="text/javascript" src="lib/js/jquery.zclip.js"></script><?php */?>
-	<script type="text/javascript">
-		
-		$(document).ready(function(){
-		
-			$('a#changelog').click(function(){
-				$("#changelogging").dialog({
-					height: 400,
-					width: 550,
-					modal: true
-				});
-			});
-			
-			/*$('input#copytoclipboard').zclip({
-		        path:'lib/js/ZeroClipboard.swf',
-		        copy:$('#genpw li a strong').text()
-		    });*/
-			
-		});
-		
-	</script>
+	<script type="text/javascript" src="lib/js/scripts.js"></script>
 	</body>
 </html>

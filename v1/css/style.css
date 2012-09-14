@@ -1,0 +1,17 @@
+/*body {background: #fff url("images/bg2.jpg"); font-family: "Trebuchet MS";}*/
+body {background: #C0DEED url("/passwordr/images/bg.png") repeat-x; font-family: "Trebuchet MS";}
+ul {list-style-type: none; margin: 0 auto;}
+li {background: #333; border: 1px solid #212629; color: #fff; margin: 5px 0 0 -40px; margin-top: 20px;}
+.options {background: #333; border: 1px solid #212629; margin: 0;}
+li a, .options {color: #fff; font-size: 18px;text-decoration: none;display:block;padding:10px;outline: none;}
+a strong {color: #bde405; float: right; background-color: #222; margin: -10px; padding: 10px; border-left: 3px solid #000; width: 300px; text-align: center;}
+#wrapper {width: 620px; margin: 200px auto;}
+input.submit {font-family: Georgia; font-weight: bold; font-size: 20px; cursor: pointer; float: right; background: transparent; border: none; color: #333; margin-top: 5px;}
+input.submit:hover {text-decoration: underline; color: #333;}
+h1 {font-family: Georgia;/*  text-shadow: #111 1px 1px 3px; */ border-top: 1px solid #333; padding-top: 5px;}
+/* a:hover, li.titles {text-decoration: none; background-color: #49b8a8; color: #fff;} */
+/* a:active {color: #fff;background-color: #259780;} */
+.small {font-size: 11px;}
+#footer a {color: #333; text-decoration: none;}
+#footer {font-size: 11px; margin-top: 42px; border-top: 1px solid #333;}
+#footer p {margin: 5px 0;}

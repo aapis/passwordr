@@ -18,14 +18,15 @@
 		public function __construct(){
 		
 			$this->level = 2;
-			$this->length = $_POST['len'];
+			$this->length = $this->cleanup($_POST['len']);
 	
-			if($_POST['base']){
+			if($this->cleanup($_POST['base'])){
 			
-				$this->password = $_POST['base'];
+				$this->password = $this->cleanup($_POST['base']);
 			
 			}else {
-			
+				
+				$this->length = 0;
 				$this->password = md5(time());
 			
 			}
@@ -38,8 +39,11 @@
 		private function randomizer(){
 		
 			$this->items = str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_?+-.<?;:&#@");
+			$password = substr(sha1($this->password.$this->items), $this->startmajigger(), $this->length - 1);
+
+			$this->length = strlen($password);
 			
-			return substr(sha1($this->password.$this->items), $this->startmajigger(), $this->length - 1);
+			return $password;
 		
 		}
 		
@@ -122,14 +126,49 @@
 					$rediscombobulated = $this->rediscombobulator($arrayitized);
 					$rediscombobulated[] = $specialchar;
 					shuffle($rediscombobulated);
-					
+					//$return = array();
 					return implode($rediscombobulated);
+					//$return['pass'] = implode($rediscombobulated);
+					
+					//return $return;
 					
 				}
 			
 			}
 			
 		}
+		
+		/* cleanup() does some basic input validation.  Not really a necessary step, but it's good practice */
+		/* returns string */
+		
+		private function cleanup($gvar){
+		
+			if(in_array($gvar, $_POST, TRUE)){
+				
+				strip_tags($gvar);
+				
+				switch($gvar){
+				
+					case is_int($gvar):
+						return intval($gvar);
+					break;
+					
+					case is_string($gvar):
+						return (string) $gvar;
+					break;
+					
+					default:
+						return FALSE;
+				
+				}
+			
+			}else {
+			
+				return FALSE;
+			
+			}
+		
+		}		
 	
 	}
 

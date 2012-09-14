@@ -1,6 +1,6 @@
 <?php
 
-	$myips = array("68.149.122.191", "96.52.132.249", "50.65.18.100", "142.244.252.41");
+	$myips = array("68.149.122.191", "96.52.132.249");
 	$pagename = substr($_SERVER['PHP_SELF'], 11);
 	
 	if(!$derp->virgin() && !in_array($_SERVER['REMOTE_ADDR'], $myips)){
