@@ -42,7 +42,7 @@
 			$password = substr(sha1($this->password.$this->items), $this->startmajigger(), $this->cleanup($_POST['len']) - 1);
 
 			$this->length = strlen($password);
-			
+
 			return $password;
 		
 		}
@@ -63,9 +63,7 @@
 					$added_character = substr($this->items, 0, $diff);
 					
 					for($i = 0; $i <= $diff; $i++){
-
 						unset($arr[$i]);
-						
 					}
 					
 					$arr[] = $added_character;
@@ -73,7 +71,9 @@
 					return $arr;
 				
 				}
-								
+
+			}else {
+				return $unique_arr;
 			}
 		
 		}

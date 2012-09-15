@@ -15,7 +15,7 @@
 		
 	}
 	
-	require_once 'lib/hit.php';
+	//require_once 'lib/hit.php';
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -29,7 +29,8 @@
 	<body>
 	<div id="wrapper">
 		<div id="innerwrapper">
-			<h1><a href="http://labs.ryanpriebe.com/passwordr/">Passwordr: Because making new passwords is hard.</a></h1>
+			<h1 id="title"><a href="/">Passwordr</a></h1>
+			<h2>Because making new passwords is hard</h2>
 			<form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
 				<div class="options">
 					Length: <select name="len">
@@ -39,7 +40,7 @@
 					</select>
 					Salt: <input type="text" name="base" placeholder="<?= $derp->password ?>" />
 				</div>
-				<p class="small">A salt will make your password more secure.  It defaults to the string above, but you can use whatever you want.</p>
+				<!-- <p class="small">A salt will make your password more secure.  It defaults to the string above, but you can use whatever you want.</p> -->
 			<?php if(isset($_POST['generatepw'])){?>
 				<ul id="genpw">
 					<li><a>Your <?= $_POST['len']; ?> digit password is: <strong><?= $password; ?></strong></a></li>
@@ -55,43 +56,9 @@
 				<?php /*?><input type="hidden" name="pass" value="<?= $password; ?>" /><?php */?>
 			</form>
 			<div id="footer">
-				<p><a id="info">info</a> | &copy; <?php echo date("Y"); ?> <a href="http://www.ryanpriebe.com" target="_blank">ryanpriebe.com</a></p>
+				<p><a href="#changelogging">info</a> | <a href="#api-help">API</a> | &copy; <?php echo date("Y"); ?> <a href="http://www.ryanpriebe.com" target="_blank" class="copyright">ryanpriebe.com</a></p>
 			</div>
-			<div id="changelogging" title="Info">
-				<div id="changelogcontent">
-					<div class="version">
-						<h2>Known Issues</h2>
-						<ul>
-							<li><a href="https://github.com/aapis/passwordr/issues" target="_blank">https://github.com/aapis/passwordr/issues</a></li>
-						</ul>
-					</div>
-					<div class="version">
-						<h2>3.0 Planned Features</h2>
-						<ul>
-							<li>API</li>
-							<li>Copy to clipboard.</li>
-						</ul>
-					</div>
-					<h2>Changelog</h2>
-					<div class="version">
-						<h2>2.0</h2>
-						<ul>
-							<li>Added a new method that generates better passwords.</li>
-							<li>Removed the level options, now defaults to the more secure level.</li>
-							<li>Refactored the code to run faster.</li>
-							<li>Removed the shorter lengths as most sites ask for passwords of 7 digits or more.</li>
-							<li>Updated the style.</li>
-						</ul>
-					</div>
-					<div class="version">
-						<h2>1.0</h2>
-						<ul>
-							<li>Initial release.</li>
-							<li><a href="v1/" target="_blank">View version 1.</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
+			<div id="modal"></div>
 		</div>	
 	</div>
 	<script type="text/javascript" src="lib/js/jquery.js"></script>
