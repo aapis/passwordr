@@ -19,16 +19,18 @@
 		
 			$this->level = 2;
 			//$this->length = $this->cleanup($_POST['len']);
-	
-			if($this->cleanup($_POST['base'])){
-			
-				$this->password = $this->cleanup($_POST['base']);
-			
-			}else {
+		
+			if(isset($_POST)){
+				if($this->cleanup($_POST['base'])){
 				
-				$this->length = 0;
-				$this->password = md5(time());
-			
+					$this->password = $this->cleanup($_POST['base']);
+				
+				}else {
+					
+					$this->length = 0;
+					$this->password = md5(time());
+				
+				}
 			}
 			
 		}
@@ -37,7 +39,6 @@
 		/* returns string */
 		
 		private function randomizer(){
-		
 			$this->items = str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_?+-.<?;:&#@");
 			$password = substr(sha1($this->password.$this->items), $this->startmajigger(), $this->cleanup($_POST['len']) - 1);
 
@@ -111,6 +112,8 @@
 		/* returns string */
 		
 		public function confusitizer(){
+
+			if(empty($_GET)) return;
 		
 			$this->output = $this->randomizer();
 			$rediscombobulated = array();

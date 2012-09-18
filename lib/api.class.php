@@ -6,13 +6,18 @@
 		private $_result = null;
 		private $_type = null;
 		private $_length = 0;
+		private $_salt = null;
+		private $_return_salt = null;
 
-		public function __construct($key, $length, $type = 'json'){
+		public function __construct($key, $length, $salt, $type = 'json'){
 			//set the authentication key
 			$this->_setKey($key);
 
 			//set the data type
 			$this->_setDataType($type);
+
+			//set the salt
+			$this->_setSalt($salt);
 
 			//set the length of the StringResult
 			$this->_setLength($length);
@@ -27,6 +32,7 @@
 			if($this->_auth()){
 				$obj->StringResult = substr($this->confusitizer(), 0, $this->_length);
 				$obj->Length = $this->_length;
+				$obj->NewSalt = md5(time());
 
 				switch($this->_type){
 					case 'xml':
@@ -45,6 +51,8 @@
 			}else {
 				$obj->StringResult = 'Invalid authentication key.';
 				$obj->Length = strlen($obj->StringResult);
+				$obj->Key = $this->_key;
+				$obj->ErrorCode = 403;
 
 				$this->_result = json_encode($obj);
 			}
@@ -70,6 +78,10 @@
 			}
 
 			$this->_length = $length;
+		}
+
+		private function _setSalt($salt){
+			$this->_salt = $salt;
 		}
 
 		public function result(){

@@ -3,7 +3,7 @@
 	include('../lib/passwordr.class.php');
 	include('../lib/api.class.php');
 
-	$API = new API('dfkj', intval($_GET['length']));
+	$API = new API($_GET['k'], intval($_GET['l']), $_GET['s']);
 
 	echo $API->result();
 
